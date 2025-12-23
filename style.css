@@ -1,0 +1,157 @@
+:root {
+    --bg1:#09090f;
+    --bg2:#12121a;
+    --card:rgba(255,255,255,.08);
+    --border:rgba(255,255,255,.15);
+    --text:#fff;
+    --muted:rgba(255,255,255,.6);
+
+    --high:#ff4d4d;
+    --medium:#ffb84d;
+    --low:#4cd964;
+
+    --accent:#6c63ff;
+}
+
+body {
+    min-height:100vh;
+    background:radial-gradient(circle at top,var(--bg2),var(--bg1));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Poppins,system-ui,sans-serif;
+    padding:20px;
+}
+
+.todo-box {
+    width:100%;
+    max-width:450px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:26px;
+    box-shadow:0 25px 60px rgba(0,0,0,.6);
+    animation:fadeUp .6s ease;
+}
+
+@keyframes fadeUp {
+    from {opacity:0; transform:translateY(20px)}
+    to {opacity:1; transform:none}
+}
+
+.todo-heading {
+    color:var(--text);
+    font-size:2.1rem;
+    font-weight:700;
+    letter-spacing:.6px;
+}
+
+.form-control {
+    background:rgba(255,255,255,.12);
+    border:1px solid var(--border);
+    color:var(--text);
+    border-radius:14px 0 0 14px;
+}
+
+.form-control::placeholder { color:var(--muted); }
+
+.form-control:focus {
+    background:rgba(255,255,255,.18);
+    box-shadow:0 0 0 2px rgba(108,99,255,.4);
+    border-color:var(--accent);
+}
+
+.btn-add {
+    background:linear-gradient(135deg,var(--accent),#8a84ff);
+    border:none;
+    color:#fff;
+    border-radius:0 14px 14px 0;
+    transition:.3s;
+}
+
+.btn-add:hover {
+    transform:scale(1.05);
+    box-shadow:0 8px 20px rgba(108,99,255,.5);
+}
+
+.form-select {
+    margin-top:14px;
+    background:rgba(255,255,255,.12);
+    border:1px solid var(--border);
+    border-radius:14px;
+    color:#fff;
+}
+
+.form-select option {
+    background:#111;
+}
+
+.todo-item {
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:16px 18px;
+    margin-bottom:16px;
+    position:relative;
+    animation:itemPop .4s ease;
+}
+
+@keyframes itemPop {
+    from {opacity:0; transform:scale(.95)}
+    to {opacity:1; transform:none}
+}
+
+.todo-item::before{
+    content:"";
+    position:absolute;
+    left:0; top:0;
+    width:4px; height:100%;
+    border-radius:16px;
+}
+
+.todo-item:has(.badge-high)::before {background:var(--high)}
+.todo-item:has(.badge-medium)::before {background:var(--medium)}
+.todo-item:has(.badge-low)::before {background:var(--low)}
+
+.todo-text {
+    color:var(--text);
+    font-weight:500;
+}
+
+.badge {
+    border-radius:10px;
+    padding:6px 12px;
+    font-size:.75rem;
+}
+
+.badge-high {background:var(--high)}
+.badge-medium {background:var(--medium)}
+.badge-low {background:var(--low)}
+
+.btn-danger {
+    background:rgba(255,77,77,.25);
+    border:none;
+    border-radius:10px;
+}
+
+.btn-danger:hover {
+    background:var(--high);
+    transform:scale(1.1);
+}
+
+.empty-area {
+    text-align:center;
+    padding:3rem 1rem;
+    color:var(--muted);
+}
+
+.empty-area i {
+    font-size:3rem;
+    margin-bottom:.8rem;
+    opacity:.7;
+}
+
+@media(max-width:480px){
+    .todo-heading {font-size:1.8rem}
+    .todo-box {padding:20px}
+}

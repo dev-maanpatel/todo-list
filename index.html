@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TO-DO list</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<div class="todo-box">
+    <div class="text-center mb-3">
+        <h1 class="todo-heading">📝 Todo</h1>
+    </div>
+
+    <div class="mb-3">
+        <div class="input-group">
+            <input type="text" id="todoInput" class="form-control"
+                   placeholder="What needs to be done?">
+            <button class="btn btn-add" onclick="addTask()">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+
+        <select class="form-select" id="prioritySelect">
+            <option value="-1">Select Priority</option>
+            <option value="1">🔴 High Priority</option>
+            <option value="2">🟡 Medium Priority</option>
+            <option value="3">🟢 Low Priority</option>
+        </select>
+    </div>
+
+    <div id="todoList">
+        <div class="empty-area">
+            <i class="fas fa-check-circle"></i>
+            <p>Your to-do list is empty</p>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="./script.js"></script>
+
+
+</body>
+</html>
