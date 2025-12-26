@@ -34,11 +34,6 @@ body {
     animation:fadeUp .6s ease;
 }
 
-@keyframes fadeUp {
-    from {opacity:0; transform:translateY(20px)}
-    to {opacity:1; transform:none}
-}
-
 .todo-heading {
     color:var(--text);
     font-size:2.1rem;
@@ -96,11 +91,6 @@ body {
     animation:itemPop .4s ease;
 }
 
-@keyframes itemPop {
-    from {opacity:0; transform:scale(.95)}
-    to {opacity:1; transform:none}
-}
-
 .todo-item::before{
     content:"";
     position:absolute;
@@ -149,9 +139,4 @@ body {
     font-size:3rem;
     margin-bottom:.8rem;
     opacity:.7;
-}
-
-@media(max-width:480px){
-    .todo-heading {font-size:1.8rem}
-    .todo-box {padding:20px}
 }
